@@ -66,6 +66,12 @@
      <artifactId>spring-data-jpa</artifactId>
      <version>2.1.10.RELEASE</version>
    </dependency>
+ 
+   <dependency>
+     <groupId>io.cronapp</groupId>
+     <artifactId>cronapp-acesso-cliente</artifactId>
+     <version>3.0.0-SP.47</version>
+   </dependency>
  </dependencies>
 
 	<build>

@@ -10,9 +10,9 @@ import org.springframework.stereotype.Service;
 public class UsuarioService {
 
     @Autowired
-    private UsuarioRepository usuarioRepository;
+    private UsuarioRepository repository;
 
-    public Usuario salvarUsuario(Usuario usuario) {
-        return usuarioRepository.save(usuario);
+    public Usuario salvarUsuario (Usuario usuario) {
+        return repository.saveAndFlush(usuario);
     }
 }
