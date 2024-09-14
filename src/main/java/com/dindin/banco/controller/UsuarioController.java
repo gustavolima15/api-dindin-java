@@ -6,6 +6,7 @@ import com.dindin.banco.model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -38,5 +39,10 @@ public class UsuarioController {
     public ResponseEntity<Usuario> updateUsuario (@RequestBody Usuario usuario) {
         Usuario newUsuario = service.salvarUsuario(usuario);
         return new ResponseEntity<>(newUsuario, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/delete")
+    public ResponseEntity<String> deleteUsuario() {
+        return new ResponseEntity<>("Usuario deletado", HttpStatus.OK);
     }
 }
