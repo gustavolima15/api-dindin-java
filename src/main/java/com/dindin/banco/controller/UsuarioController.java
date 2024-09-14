@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,5 +31,12 @@ public class UsuarioController {
     @GetMapping("/user")
     public ResponseEntity<String> getUser() {
         return new ResponseEntity<>("Hello World", HttpStatus.OK);
+    }
+    
+
+    @PutMapping("/update")
+    public ResponseEntity<Usuario> updateUsuario (@RequestBody Usuario usuario) {
+        Usuario newUsuario = service.salvarUsuario(usuario);
+        return new ResponseEntity<>(newUsuario, HttpStatus.OK);
     }
 }
